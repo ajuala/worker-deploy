@@ -13,7 +13,7 @@ export default {
 
 		} catch(err) {
 			console.log(err);
-			return new Response(err.toString());
+			return new Response(err.toString() + ' : ' + env.FAUNA_SECRET);
 		}
 		return new Response(JSON.stringify(q), {
 			headers: {
