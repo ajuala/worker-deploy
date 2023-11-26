@@ -1,7 +1,7 @@
 import { fql, Client, FaunaError } from 'node:fauna';
 
 export default {
-	fetch() {
+	async fetch(req, env) {
 		let client = new Client({secret: env.FAUNA_KEY});
 		let q = await client.query(fql`Time.now()`);
 
