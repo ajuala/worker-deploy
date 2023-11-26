@@ -8,6 +8,8 @@ export default {
 		try {
 			let client = new Client({secret: env.FAUNA_SECRET});
 			q = await client.query(fql`Time.now()`);
+			console.log(q);
+			q = {success: "done"};
 
 		} catch(err) {
 			console.log(err);
