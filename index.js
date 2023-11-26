@@ -1,6 +1,6 @@
 export default {
 	fetch() {
-		return new Response('Hello worker!', {
+		return new Response(new Date().toISOString(), {
 			headers: {
 				'content-type': 'text/plain',
 			},
