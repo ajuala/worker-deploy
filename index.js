@@ -7,7 +7,7 @@ export default {
 		try {
 			let client = new Client({secret: env.FAUNA_SECRET});
 			let q1 = await client.query(fql`Time.now()`);
-			let q2 = await client.query(fql`Date.now()`);
+			let q2 = await client.query(fql`Date.today()`);
 			let q3 = await client.query(fql`Time.now()`);
 
 		} catch(err) {
