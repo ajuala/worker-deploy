@@ -9,11 +9,10 @@ export default {
 			let client = new Client({secret: env.FAUNA_SECRET});
 			q = await client.query(fql`Time.now()`);
 			console.log(q);
-			q = {success: "done"};
 
 		} catch(err) {
 			console.log(err);
-			return new Response(err.toString() + ' : ' + env.FAUNA_SECRET);
+			return new Response(err.toString());
 		}
 		return new Response(JSON.stringify(q), {
 			headers: {
