@@ -13,6 +13,5 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           preCommands: npm install
-          apiToken: a9c99f0d8905e24506d7b714322dd33aac9d3
-          # apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
