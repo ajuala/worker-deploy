@@ -9,8 +9,6 @@ export default {
 			let q1 = await client.query(fql`Time.now()`);
 			let q2 = await client.query(fql`Date.now()`);
 			let q3 = await client.query(fql`Time.now()`);
-			client.close();
-			console.log(q);
 
 		} catch(err) {
 			console.log(err);
