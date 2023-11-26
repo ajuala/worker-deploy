@@ -14,7 +14,7 @@ export default {
 		} catch(err) {
 			console.log(err);
 		}
-		return new Response(JSON.parse(q), {
+		return new Response(JSON.stringify(q), {
 			headers: {
 				'content-type': 'application/json',
 			},
