@@ -3,9 +3,11 @@ const { fql, Client, FaunaError } = require('fauna');
 export default {
 	async fetch(req, env) {
 
+		let q = {error: "Unable to pwrform request"};
+
 		try {
 			let client = new Client({secret: env.FAUNA_SECRET});
-			let q = await client.query(fql`Time.now()`);
+			q = await client.query(fql`Time.now()`);
 
 		} catch(err) {
 			console.log(err);
