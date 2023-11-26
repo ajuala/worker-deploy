@@ -6,11 +6,13 @@ export default {
 	fetch() {
 
 		let doc = new pdf.Document();
-		let buf = new streamBuffers.WritableStreamBuffer()
+		let buf = new streamBuffers.WritableStreamBuffer();
 
+		doc.pipe(buf);
 		doc.text("When the winter comes and the white winds blow, the lone wolf dies but the pack survives.");
+		doc.end()
 
-		return new Response(doc.asBuffer(), {
+		return new Response(buf.getContents(), {
 			headers: {
 				'content-type': 'application/pdf',
 				'content-disposition': 'attachment; filename="the-north-remembers.pdf"',
