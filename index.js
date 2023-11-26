@@ -1,21 +1,14 @@
-const pdf = require("pdfjs");
-const streamBuffers = require("stream-buffers");
-
+import { fql, Client, FaunaError } from 'node:fauna';
 
 export default {
 	fetch() {
+		let client = new Client({secret: env.FAUNA_KEY});
+		let q = await client.query(fql`Time.now()`);
 
-		let doc = new pdf.Document();
-		let buf = new streamBuffers.WritableStreamBuffer();
 
-		doc.pipe(buf);
-		doc.text("When the winter comes and the white winds blow, the lone wolf dies but the pack survives.");
-		doc.end()
-
-		return new Response(buf.getContents(), {
+		return new Response(JSON.parse(q), {
 			headers: {
-				'content-type': 'application/pdf',
-				'content-disposition': 'attachment; filename="the-north-remembers.pdf"',
+				'content-type': 'application/json',
 			},
 		});
 	},

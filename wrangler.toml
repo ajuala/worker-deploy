@@ -1,5 +1,6 @@
 name = "my-worker" # todo
 main = "./index.js"
 compatibility_date = "2022-10-10"
+FAUNA_KEY = "fnAFTkC49GAAQMu3u301x9FM8x2dT--yWNVT7nyG"
 # node_compat = true
 
