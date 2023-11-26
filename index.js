@@ -1,5 +1,5 @@
-const  PDFDocument =  require("node:pdfkit");
-const streamBuffers = require("node:stream-buffers");
+import  PDFDocument from "pdfkit";
+import streamBuffers from "stream-buffers";
 
 
 
