@@ -1,5 +1,5 @@
-// const PDFDocument = require("pdfkit");
-// const streamBuffers = require("stream-buffers");
+const PDFDocument = require("pdfkit");
+const streamBuffers = require("stream-buffers");
 
 
 export default {
