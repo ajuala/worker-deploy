@@ -6,6 +6,7 @@ export default {
 	fetch() {
 
 		let doc = new pdf.Document();
+		let buf = new streamBuffers.WritableStreamBuffer()
 
 		doc.text("When the winter comes and the white winds blow, the lone wolf dies but the pack survives.");
 
