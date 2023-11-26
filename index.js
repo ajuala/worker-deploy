@@ -1,4 +1,4 @@
-import { fql, Client, FaunaError } = require('fauna');
+const { fql, Client, FaunaError } = require('fauna');
 
 export default {
 	async fetch(req, env) {
